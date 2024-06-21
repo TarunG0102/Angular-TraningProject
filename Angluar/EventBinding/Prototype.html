@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+var obj ={
+    fname:"Sachine",
+    lname :"Tendulkar",
+    sayhi:function(){
+        alert("Hi All")
+    }
+}
+
+var obj2=Object.create(obj);
+obj.fname="Virat";
+alert(obj2.fname)
+alert(obj2.lname)
+obj2.sayhi()
+
+
+
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>

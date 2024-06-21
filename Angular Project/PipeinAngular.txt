@@ -1,0 +1,140 @@
+For Profile Builder :- https://www.bootdey.com/snippets/view/profile-edit-data-and-skills#html
+
+
+
+
+
+npm install bootstrap bootstrap-icons - https://www.freecodecamp.org/news/how-to-add-bootstrap-css-framework-to-an-angular-application/
+
+
+
+Create Profile Builder Application On Angular Project on Angular 18 Where in one portion is using for the writing like Name(Use Textbox),Mobile(Textbox-number),Email(textbox-email),skills(use-checkbox) when we are selecting multiple values from checkbox that time at the second portion showing In ul and li format (like if we select dotnet and c# that time in add two li where the first li contain dotnet and in second li contain c#) What Ever We Writing at the same time reflecting in second form 
+
+
+
+//Custom Pipe
+
+<div>
+
+ <h2>Using CurrencyPipe</h2>
+
+ <p>Price: {{ price | currency }}</p>
+
+ <p>Price: {{ price | currency : "EUR" : "symbol-narrow" : "4.2-2" }}</p>
+
+</div>
+
+<div>
+
+  <h2>Using DatePipe</h2>
+
+  <p>Current date: {{ currentDate | date }}</p>
+
+  <p>Current date: {{ currentDate | date:'fullDate' }}</p>
+
+  <p>Current date: {{ currentDate | date:'short' }}</p>
+
+ </div>
+
+ <div>
+
+  <h2>Using JsonPipe</h2>
+
+  <pre>{{ myObject | json }}</pre>
+
+ </div>
+
+ <div>
+
+  <h2>Using LowerCasePipe</h2>
+
+  <p>Original String: {{ myString }}</p>
+
+  <p>Lowercased String: {{ myString | lowercase }}</p>
+
+  <p>Uppercased String: {{ myString | uppercase }}</p>
+
+  <p>Titlecased String: {{ myString | titlecase }}</p>
+
+ </div>
+
+ <div>
+
+  <h2>Using PercentPipe</h2>
+
+  <p>Original Number: {{ myNumber }}</p>
+
+  <p>Percentage Value: {{ myNumber | percent }}</p>
+
+ </div>
+
+ <div>
+
+  <h2>Using custom FilterPipe</h2>
+
+  <p>Object: {{ arrObj | filterPipe:'fname':'Sachin' | json }}</p>
+
+ </div>
+
+
+
+
+
+
+
+import { CurrencyPipe, DatePipe, JsonPipe, LowerCasePipe, PercentPipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+
+import { Component } from '@angular/core';
+
+import { FilterPipePipe } from '../../pipes/filter-pipe.pipe';
+
+@Component({
+
+ selector: 'app-pipes-example',
+
+ standalone: true,
+
+ imports: [CurrencyPipe,DatePipe,JsonPipe,PercentPipe,LowerCasePipe,UpperCasePipe,TitleCasePipe,FilterPipePipe],
+
+ templateUrl: './pipes-example.component.html',
+
+ styleUrl: './pipes-example.component.css'
+
+})
+
+export class PipesExampleComponent {
+
+ price: number = 12345.6789;
+
+ currentDate: Date = new Date();
+
+ myString: string = 'This is a STRING in Mixed CASE';
+
+ myObject: any = {
+
+  name: 'John',
+
+  age: 30,
+
+  email: 'john@example.com'
+
+ };
+
+ myNumber: number = 0.23;
+
+ arrObj:any[]=[
+
+   {fname:"Sachin",lname:"Tendulkar"},
+
+   {fname:"Rahul",lname:"Dravid"}
+
+  ]
+
+}
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+arr = [20,5,7,2,5]
+// fiterarr=(n1) =>{
+// return n1%2 == 0
+// }
+// filteraaaa = arr.filter(fiterarr)
+// alert(filteraaaa)
+
+// mappingarr=(n1) =>{
+// return n1*2 }
+// mappingdaaaa = arr.map(mappingarr)
+// alert(mappingdaaaa)
+
+
+names = [
+    {fname:"Mukeh",lname:"Viral",role:"batsman"},
+    {fname:"Neel",lname:"Kirna",role:"boler"},
+    {fname:"Arun",lname:"Sharma",role:"allround"},
+    {fname:"Neha",lname:"Barma",role:"batsman"}
+]
+
+// fiterarr=((n1) => n1.role =="batsman")                            
+// filteraaaa = names.filter(fiterarr)
+// alert(JSON.stringify(filteraaaa))
+ fiterarr=((n1) => n1.role =="batsman"? n1.fname+" "+n1.lname+" "+ n1.role :n1.fname)
+ filteraaaa = names.map(fiterarr)
+alert(JSON.stringify(filteraaaa))
+
+</script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

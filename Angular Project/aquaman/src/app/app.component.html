@@ -1,0 +1,72 @@
+<!-- <h1>Hello {{title}}!!!!</h1> -->
+
+<!-- <h1>Hello {{people}}</h1> -->
+<input type="text" [(ngModel)]="newname"><button (click)="Add()"><i class="bi bi-plus-square-fill"></i></button>
+<br>
+<div class="col-md-4">
+<input type="text" placeholder="ID" disabled="">
+<input type="text" [(ngModel)]="newname_id" class="form-control">
+<input type="text" placeholder="Name" disabled="">
+<input type="text" [(ngModel)]="newname_name" class="form-control">
+<input type="number" placeholder="Age" disabled="">
+<input type="text" [(ngModel)]="newname_age" class="form-control">
+</div>
+
+
+<!-- <i class="bi bi-plus-square-fill"></i> -->
+<p>{{newname}}</p>
+
+<div class="col">
+  <button (click)="sortAscending()" ><i class="bi bi-sort-down-alt"></i></button>
+  <button (click)="sortDescending()" ><i class="bi bi-sort-down"></i></button>
+</div>
+<br>
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Id</th>
+     
+      <th scope="col">Action</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+  @for (item of people; track $index) {
+    <tr> 
+
+ <td scope="row">{{item}}</td>  
+ 
+ <!-- <td><button (click)="remove($index)" class="btn btn-secondary">Remove</button></td> -->
+  <td><i (click)="remove($index)" class="bi bi-trash3-fill"></i>  </td>
+</tr>
+
+}
+</tbody>
+</table>
+
+
+
+
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  @for (items of peoples; track $index) {
+    <tr> 
+
+ <td scope="row">{{items.id}}</td>  
+ <td scope="row">{{items.name}}</td>  
+ <td scope="row">{{items.age}}</td>  
+ <!-- <td><button (click)="remove($index)" class="btn btn-secondary">Remove</button></td> -->
+  <td><i (click)="remove($index)" class="bi bi-trash3-fill"></i>  </td>
+</tr>
+
+}
+</tbody>
+</table>

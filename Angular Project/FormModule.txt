@@ -1,0 +1,202 @@
+-----------------------TS FILE-----------------------
+
+
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-template-form1',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './template-form1.component.html',
+  styles: []
+})
+export class TemplateForm1Component {
+  countryList:country[] = [
+    new country("1", "Pakistan"),
+    new country('2', 'UAE'),
+    new country('3', 'USA')
+  ];
+  onSubmit(contactForm : any) {
+    console.log(contactForm.value);
+  }
+}
+ 
+export class country {
+  id:string;
+  name:string;
+ 
+  constructor(id:string, name:string) {
+    this.id=id;
+    this.name=name;
+  }
+}
+
+--------------HTML---------------------
+
+
+<form #singUpForm="ngForm" (ngSubmit)="onSubmit(singUpForm)">
+  <p>
+    <label for="firstname">First Name</label>
+    <input type="text" name="firstname" ngModel />
+  </p>
+
+  <p>
+    <label for="lastname">Last Name</label>
+    <input type="text" name="lastname" ngModel />
+  </p>
+
+  <p>
+    <label for="email">Email </label>
+    <input type="text" id="email" name="email" ngModel />
+  </p>
+
+  <p>
+    <label for="gender">Geneder</label>
+    <input type="radio" value="male" name="gender" ngModel /> Male
+    <input type="radio" value="female" name="gender" ngModel /> Female
+  </p>
+
+  <p>
+    <label for="isMarried">Married</label>
+    <input type="checkbox" name="isMarried" ngModel />
+  </p>
+
+  <select name="country" ngModel>
+    @for (c of countryList; track $index) {
+    <option [value]="c.id">
+      {{ c.name }}
+    </option>
+    }
+  </select>
+
+  <p>
+    <button type="submit">Submit</button>
+  </p>
+</form>
+
+-----------------------------HTML WITH VALIDATION--------------------------------------
+<form #singUpForm="ngForm" (ngSubmit)="onSubmit(singUpForm)">
+    <p>
+      <label for="firstname">First Name</label>
+      <input type="text" name="firstName"  minlength="3"  ngModel required/>
+    </p>
+    @if(singUpForm.form.controls['firstName'].hasError('required')){
+        <p >This field is required</p>
+    }
+    @if(singUpForm.form.controls['firstName'].hasError('minlength')){
+        <p>This field must be longer than
+            {{singUpForm.form.controls['firstName'].errors | json}}    
+        </p>
+    }
+    
+    <p>
+        <strong>Valid ? </strong>{{singUpForm.form.controls['firstName']?.valid}} <br>
+        <strong>Invalid ? </strong>{{singUpForm.form.controls['firstName']?.invalid}}<br>
+        <strong>Touched ? </strong>{{singUpForm.form.controls['firstName']?.touched}}<br>
+        <strong>Untouched ? </strong>{{singUpForm.form.controls['firstName']?.untouched}}<br>
+        <strong>Dirty ? </strong>{{singUpForm.form.controls['firstName']?.dirty}}<br>
+        <strong>Pristine ? </strong>{{singUpForm.form.controls['firstName']?.pristine}}<br>
+    </p>
+   
+    <p>
+      <label for="lastname">Last Name</label>
+      <input type="text" name="lastname" ngModel />
+    </p>
+  
+    <p>
+      <label for="email">Email </label>
+      <input type="text" id="email" name="email" ngModel />
+    </p>
+  
+    <p>
+      <label for="gender">Geneder</label>
+      <input type="radio" value="male" name="gender" ngModel /> Male
+      <input type="radio" value="female" name="gender" ngModel /> Female
+    </p>
+  
+    <p>
+      <label for="isMarried">Married</label>
+      <input type="checkbox" name="isMarried" ngModel />
+    </p>
+  
+    <select name="country" ngModel>
+      @for (c of countryList; track $index) {
+      <option [value]="c.id">
+        {{ c.name }}
+      </option>
+      }
+    </select>
+  
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+  </form>
+  
+  
+  
+  -----------------------------HTML WITH VALIDATION--------------------------------------
+
+  
+  
+  <form #singUpForm="ngForm" (ngSubmit)="onSubmit(singUpForm)">
+    <p>
+      <label for="firstname">First Name</label>
+      <input type="text" #fnameref="ngModel" name="firstName"  minlength="3"  ngModel required/>
+    </p>
+    @if(singUpForm.form.controls['firstName'].hasError('required')){
+        <p >This field is required</p>
+        <p>{{fnameref.errors | json}} </p>
+    }
+    @if(singUpForm.form.controls['firstName'].hasError('minlength')){
+        <p>This field must be longer than
+            {{singUpForm.form.controls['firstName'].errors | json}}    
+        </p>
+        <p>This field must be longer than
+            {{fnameref.errors | json}}    
+        </p>
+    }
+    
+    <p>
+        <strong>Valid ? </strong>{{singUpForm.form.controls['firstName']?.valid}} <br>
+        <strong>Invalid ? </strong>{{singUpForm.form.controls['firstName']?.invalid}}<br>
+        <strong>Touched ? </strong>{{singUpForm.form.controls['firstName']?.touched}}<br>
+        <strong>Untouched ? </strong>{{singUpForm.form.controls['firstName']?.untouched}}<br>
+        <strong>Dirty ? </strong>{{singUpForm.form.controls['firstName']?.dirty}}<br>
+        <strong>Pristine ? </strong>{{singUpForm.form.controls['firstName']?.pristine}}<br>
+    </p>
+   
+    <p>
+      <label for="lastname">Last Name</label>
+      <input type="text" name="lastname" ngModel />
+    </p>
+  
+    <p>
+      <label for="email">Email </label>
+      <input type="text" id="email" name="email" ngModel />
+    </p>
+  
+    <p>
+      <label for="gender">Geneder</label>
+      <input type="radio" value="male" name="gender" ngModel /> Male
+      <input type="radio" value="female" name="gender" ngModel /> Female
+    </p>
+  
+    <p>
+      <label for="isMarried">Married</label>
+      <input type="checkbox" name="isMarried" ngModel />
+    </p>
+  
+    <select name="country" ngModel>
+      @for (c of countryList; track $index) {
+      <option [value]="c.id">
+        {{ c.name }}
+      </option>
+      }
+    </select>
+  
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+  </form>
+  

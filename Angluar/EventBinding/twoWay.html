@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        name = "Rahul"
+        names = [];
+
+
+
+        function draw(){
+          main = document.getElementById("main");
+        main.innerHTML =""
+        for(var i=0;i<names.length;i++){
+        main.innerHTML += "<li> Hello " + names[i] + "<button onclick = 'Removeitem("+i+")'>Remove<button></li>";
+        }
+        function demo(){
+            var nameField = document.getElementById("name");
+            nameField.value = name;
+            draw();
+        }
+        function nameadded(){
+            var nameField = document.getElementById("name");
+            names.push(nameField.value);
+            draw()
+        }
+        }
+
+        function Removeitem(i){
+        names.splice(i,1)
+        draw()
+        }
+    </script>
+
+    
+</head>
+<body onclick="demo()">
+    <input type="text" id="name"/>
+    <button onclick="nameadded()">AddName</button>
+    <div id="main"></div>
+    <ul id="main">
+    </ul>
+</body>
+</html>

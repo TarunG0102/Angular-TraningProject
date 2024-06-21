@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+HomeClick = (a) => {
+    // alert(a);
+    var main = document.getElementById("main");
+    main.innerHTML = "<h1>This is " + a + " Page</h1>";
+}
+    </script>
+</head>
+<body>
+    <button name="Home" onclick="HomeClick('Home')">Home</button>
+    <button name="Service" onclick="HomeClick('Service')">Service</button>
+    <button name="contact" onclick="HomeClick('contact')">contact</button>
+    <button name="about" onclick="HomeClick('about')">about</button>
+
+<div id="main">
+
+</div>
+
+</body>
+</html>

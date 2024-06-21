@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+// var arr = [1,2,3,4,5,6]
+// var arr2 = arr; /// This will not worked in copy arry will not copy 
+// var arr2 = [...arr] //Using for copy Spread oprator
+// arr2[0]= "Wonder "
+// alert(arr)
+// alert(arr2)
+
+
+// var arr = 
+//     {fname:"Mukeh",lname:"Viral",role:"batsman"}
+//     var arr2 = {...arr}//Using for copy 
+// arr2.fname= "Wonderlla "
+// alert(JSON.stringify(arr))
+// alert(JSON.stringify(arr2))
+
+var arr = [
+    {fname:"Mukeh",lname:"Viral",role:"batsman"},
+    {fname:"Neel",lname:"Kirna",role:"boler"},
+    {fname:"Arun",lname:"Sharma",role:"allround"},
+    {fname:"Neha",lname:"Barma",role:"batsman"}
+]
+
+// var arr2 = arr; /// This will not worked in copy arry will not copy 
+var arr2 = arr.map(a => {return {...a}}
+    
+) //Using for copy 
+arr2[1].fname= "Wonder "
+alert(JSON.stringify(arr))
+alert(JSON.stringify(arr2))
+</script>
+</head>
+<body>
+    
+</body>
+</html>

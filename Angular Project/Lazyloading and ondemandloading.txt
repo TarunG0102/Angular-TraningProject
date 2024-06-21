@@ -1,0 +1,31 @@
+import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { RatingComponent } from './rating/rating.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+/*
+export const routes: Routes = [
+  { path: '', component: HomeComponent },
+  {
+    path: 'about',
+    component: AboutComponent,
+    children: [
+      { path: 'rating', component: RatingComponent },
+      { path: 'feedback', component: FeedbackComponent },
+    ],
+  },
+];*/
+
+export const routes: Routes = [
+  { path: '', loadComponent: () => import('./home/home.component').then((m) => m.HomeComponent) },
+  {
+    path: 'about',
+    loadComponent: () => import('./about/about.component').then((m) => m.AboutComponent) ,
+    children: [
+      { path: 'rating', component: RatingComponent },
+      { path: 'feedback', component: FeedbackComponent },
+    ],
+  },
+];
+
+This paste expires in <1 hour. Public IP access. Share whatever you see with others in seconds with Context.Terms of ServiceReport this

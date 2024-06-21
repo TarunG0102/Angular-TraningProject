@@ -1,0 +1,6 @@
+<p>spiderman works!</p>
+<ul>
+@for (missions of mission; track mission.id) {
+<li>{{missions.id+" "+ missions.Mission}}  <button (click)="removemission(missions.id)">Remove</button></li>
+}
+</ul>   
