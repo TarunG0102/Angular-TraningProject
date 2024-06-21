@@ -1,0 +1,10 @@
+<p>watch-movie works!</p>
+<div class="container">
+    <div class="row">
+        @for (Movies of Movies; track Movies.id) {}
+      <div class="col">{{Movies.id}}</div>
+      <div class="col">{{Movies.title}}</div>
+      <div class="col">{{Movies.year}}</div>
+      <div class="col">{{Movies.rating}}</div>
+    </div>
+</div>

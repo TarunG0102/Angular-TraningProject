@@ -1,0 +1,32 @@
+<!-- <div>
+    <div>
+@for (karts of kart; track $index) {
+        <span>ID = {{karts.id}}</span> <br>
+        <span>FName = {{karts.fname}}</span> <br>
+        <span>LName = {{karts.lname}}</span> <br>
+        }
+    </div>
+</div>   -->
+
+ <div class="container mt-5">
+        <div class="row">
+            @for (karts of kart; track karts.id) {
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Kart ID: {{karts.id}}</h5>
+                            <p class="card-text"><strong>First Name:</strong> {{karts.fname}}</p>
+                            <p class="card-text"><strong>Last Name:</strong> {{karts.lname}}</p>                            <p class="card-text"><strong>Last Name:</strong> {{karts.lname}}</p>
+                            <p class="card-text"><button (click)="removekart()" >Remove</button></p>
+
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+<!-- @for (Tasks of Task; track $index) {
+    {{Tasks | json}}
+} -->

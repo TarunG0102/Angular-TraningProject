@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: "Roboto", sans-serif;
+      margin: 10px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h2 {
+      color: #3d3d3d;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="address"],
+    .form-group input[type="textarea"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-group input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .checkbox-group .checkbox {
+      margin-right: 15px;
+      margin-bottom: 10px;
+    }
+
+    .checkbox label {
+      margin-left: 5px;
+    }
+
+    .resume-preview {
+      margin-top: 50px;
+    }
+
+    .w3-card-4 {
+      margin-top: 30px;
+    }
+
+    .w3-margin-bottom {
+      margin-bottom: 20px !important;
+    }
+
+    .resume-preview .w3-container {
+      margin-top: 20px;
+    }
+
+    .w3-text-teal {
+      color: #007bff !important;
+    }
+
+    /* Custom checkbox */
+    .checkbox input[type="checkbox"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .checkbox input[type="checkbox"]:checked {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .checkbox label {
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h2><i class="bi bi-info w3-xxlarge w3-text-teal"></i> <span style="color: grey">Resume Builder</span></h2>
+  </div>
+
+  <form>
+    <div class="form-group">
+      <label for="name-f">First Name</label>
+      <input type="text" id="name-f" placeholder="Enter your first name." required>
+    </div>
+    <div class="form-group">
+      <label for="name-l">Last Name</label>
+      <input type="text" id="name-l" placeholder="Enter your last name." required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email." required>
+    </div>
+    <div class="form-group">
+      <label for="tel">Phone</label>
+      <input type="tel" id="tel" placeholder="Enter your contact number." required>
+    </div>
+    <div class="form-group">
+      <label for="address-1">Address Line 1</label>
+      <input type="text" id="address-1" placeholder="Locality/House/Street no." required>
+    </div>
+    <div class="form-group">
+      <label for="address-2">Your Post</label>
+      <input type="text" id="address-2" placeholder="Enter your job description" required>
+    </div>
+
+    <div class="form-group">
+      <label>Skills</label>
+      <div class="checkbox-group">
+        <div class="checkbox">
+          <input type="checkbox" id="skill1">
+          <label for="skill1">Development</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="skill2">
+          <label for="skill2">Testing</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="skill3">
+          <label for="skill3">Database Administration</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Languages</label>
+      <div class="checkbox-group">
+        <div class="checkbox">
+          <input type="checkbox" id="lang1">
+          <label for="lang1">Python</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="lang2">
+          <label for="lang2">C#</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="lang3">
+          <label for="lang3">Angular</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="experience">Work Experience</label>
+      <input type="textarea" id="experience" placeholder="Enter your previous jobs" required>
+    </div>
+    <div class="form-group">
+      <label for="education">Education</label>
+      <input type="textarea" id="education" placeholder="Enter your education" required>
+    </div>
+    <div class="form-group">
+      <label for="projects">Projects</label>
+      <input type="textarea" id="projects" placeholder="Enter your projects" required>
+    </div>
+  </form>
+
+  <div class="resume-preview">
+    <div class="w3-third">
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <h2 class="w3-text-grey w3-padding-16"><i class="bi bi-person-fill fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>{{names.fname}} {{names.lname}}</h2>
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>{{names.job}}</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>{{names.add}}</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>{{names.email}}</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>{{names.tel}}</p>
+          <hr>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
+          <p>Adobe Photoshop</p>
+          <p>Photography</p>
+          <p>Illustrator</p>
+          <p>Media</p>
+          <br>
+
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+          <p>English</p>
+          <p>Spanish</p>
+          <p>German</p>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-twothird">
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Front End Developer / w3schools.com</b></h5>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Web Developer / something.com</b></h5>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>W3Schools.com</b></h5>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>London Business School</b></h5>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>School of Coding</b></h5>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Projects</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>W3Schools.com</b></h5>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>London Business School</b></h5>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>School of Coding</b></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

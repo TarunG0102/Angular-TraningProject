@@ -1,0 +1,18 @@
+<app-pipes-example></app-pipes-example>
+
+
+<div class="container text-center m-5">
+    <div class="row">
+        <div class="col-4">
+            <app-addtask  (AddKaro) ="AddArry($event)" (OnFilter)="OnFilter($event)"></app-addtask>
+        </div>
+
+    </div>
+
+
+</div>
+
+@for (taskItem of tasks; track taskItem.id) {
+<app-task [task]="taskItem" (hatao)="RemoveByID($event)" (AddKaro)="AddArry($event)">
+</app-task>
+}
